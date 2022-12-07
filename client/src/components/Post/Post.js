@@ -1,6 +1,5 @@
-import {Avatar, Button, Paper, Grid, Container, Typography, styled, TextField, Box} from '@mui/material';
-import { Link, Navigate, useNavigate} from "react-router-dom";
-import React, {useEffect, useState, useContext} from 'react'
+import {Avatar, Button, Paper, Container, Typography, styled} from '@mui/material';
+import React, {useState, useContext} from 'react'
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import {AuthContext} from '../../context/auth'
@@ -29,8 +28,8 @@ const Post = ({recipe}) => {
     setIsLiked(false);
     isLiked = false;
   }
-  const [isLiked, setIsLiked] = useState(false);
-  const {user,logout}= useContext(AuthContext);
+  let [isLiked, setIsLiked] = useState(false);
+  const {user}= useContext(AuthContext);
   return (
     <Container component="post" maxWidth='md'>
       <StyledPaper elevation={2}>

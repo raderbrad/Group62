@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextField, Grid, InputAdornment, IconButton } from '@mui/material'
-import { Password, Visibility, VisibilityOff } from '@mui/icons-material';
+import {Visibility, VisibilityOff } from '@mui/icons-material';
 
 
 const Input = ({name, handleChange, label, half, autoFocus, type, handleShowPassword}) => {

@@ -1,4 +1,4 @@
-import react, {useContext,useState, useRef, useEffect} from 'react';
+import {useContext,useState, useRef, useEffect} from 'react';
 import Button from '@mui/material/Button';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Grow from '@mui/material/Grow';
@@ -11,7 +11,7 @@ import {AuthContext} from '../../context/auth'
 import { Link } from "react-router-dom";
 
 export default function MenuListComp() {
-  const {user,logout}= useContext(AuthContext);
+  const {logout}= useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
 

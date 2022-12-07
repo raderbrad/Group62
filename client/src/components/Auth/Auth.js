@@ -3,7 +3,7 @@ import jwt_decode from "jwt-decode";
 import { Avatar, Button, Paper, Grid, Container, Typography, styled} from '@mui/material';
 import { LockOutlined } from '@mui/icons-material';
 import Input from './Input';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import gql from 'graphql-tag'
 import {useMutation} from '@apollo/client'
 import { AuthContext } from "../../context/auth";
@@ -27,7 +27,7 @@ const Auth = (props) => {
 
     function handleCall(res) {
         console.log("Encoded token: " + res.credential);
-        var userObj = jwt_decode(res.credential); // holds all the user info
+        const userObj = jwt_decode(res.credential); // holds all the user info
         console.log(userObj);
         setUser(userObj);
         document.getElementById("signInDiv").hidden = true;
@@ -51,7 +51,7 @@ const Auth = (props) => {
         );
     }, []);
 
-  const [errors, setErrors] = useState({});
+  const [setErrors] = useState({});
   const [showPassword, setShowPassword]= useState(false);
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState(initState);
@@ -66,7 +66,7 @@ const Auth = (props) => {
 
   const switchMode = () => {
     setIsSignup((prevIsSignup)=> !prevIsSignup);
-    handleShowPassword(false);
+    handleShowPassword();
   };
   const [addUser] = useMutation(REGISTER_USER, {
     update(_, {data: {register: userData}}){

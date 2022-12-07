@@ -1,7 +1,7 @@
 
 import {Button, Paper, Grid, Container, Typography, styled, TextField, Box} from '@mui/material';
-import { Link, useNavigate } from "react-router-dom";
-import React, {useContext, useEffect, useState} from 'react'
+import {useNavigate } from "react-router-dom";
+import React, {useState} from 'react'
 import gql from 'graphql-tag'
 import {useMutation} from '@apollo/client'
 
@@ -29,7 +29,6 @@ const initState = {name: '', description: '', ingredients: '', steps: ''};
 
 
 const CreatePost = (props) => {
-  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState(initState);
   const navigate = useNavigate();
  

@@ -1,7 +1,7 @@
 
 import {Button, Paper, Container, Typography, styled, Box, TextField} from '@mui/material';
-import { Link, useNavigate } from "react-router-dom";
-import React, {useContext, useEffect, useState} from 'react'
+import {useNavigate } from "react-router-dom";
+import React, {useContext, useState} from 'react'
 import {AuthContext} from '../../context/auth'
 import gql from 'graphql-tag'
 import {useMutation} from '@apollo/client'
@@ -21,8 +21,7 @@ const StyledPaper = styled(Paper)({
 const initState = {};
 
 const ProfilePage = () => {
-    const {user,logout} = useContext(AuthContext);
-    const [errors, setErrors] = useState({});
+    const {user} = useContext(AuthContext);
     const [formData, setFormData] = useState(initState);
     const navigate = useNavigate();
  

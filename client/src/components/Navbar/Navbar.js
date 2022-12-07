@@ -8,7 +8,7 @@ import {
     Typography,
 
   } from "@mui/material";
-import React, { useState, useContext } from 'react'
+import React, {useContext } from 'react'
 import { Link } from "react-router-dom";
 import logo from './COBRAEATS.png';
 import Image from 'mui-image';
@@ -44,7 +44,7 @@ const StyledToolbar = styled(Toolbar)({
 
 const Navbar = () => {
 
-    const {user,logout}= useContext(AuthContext);
+    const {user}= useContext(AuthContext);
 
     const navbar = user ? (
         <AppBar position='sticky'>
